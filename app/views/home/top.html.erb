@@ -1,0 +1,47 @@
+
+<body>
+<div class="main posts-index">
+  <img src="/rayoyo_irasuto/unnamed.jpg">
+
+  
+
+
+
+
+  <div class="aside">
+
+    <div class="nav">
+      <ul>
+        <li>
+          <%= link_to("ホーム", "/") %>
+        </li>
+        <li>
+          <%= link_to("新着","new_index") %>
+        </li>
+        <li>
+          <%= link_to("月間ランキング","ranking_index") %>
+        </li>
+        <li>"登録高座" </li>
+        <li>"履歴"</li>
+
+      </ul>
+    </div class="nav">
+  </div class="aside">
+
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+        <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+        <%=link_to(post.content,"/posts/#{post.id}") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</body>
