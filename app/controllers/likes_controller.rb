@@ -13,4 +13,6 @@ class LikesController < ApplicationController
     redirect_to("/posts/#{params[:post_id]}")
   end
 
+  
+
 end
